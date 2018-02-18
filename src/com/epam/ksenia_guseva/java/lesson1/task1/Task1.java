@@ -30,7 +30,7 @@ public class Task1 {
                 "2: Sum of numbers on even positions\n" +
                 "3: Change negative numbers to zero\n" +
                 "4: Multiply by three all positive numbers under negative\n" +
-                "5: Find difference average and min element\n" +
+                "5: Find difference of average and min element\n" +
                 "6: Find numbers on even positions that occur more than once");
 
         int command = in.nextInt();
@@ -51,8 +51,10 @@ public class Task1 {
                 printArray(point4(array));
                 break;
             case 5:
+                point5(array);
                 break;
             case 6:
+                point6(array);
                 break;
             default:
                 System.out.println("Enter correct command, please");
@@ -61,16 +63,16 @@ public class Task1 {
     }
 
     int[] point1(int[] array) {
-        int min = R_UP + 1, posMin = 0;
-        int max = R_DOWN - 1, posMax = 0;
+        int min = R_UP, posMin = 0;
+        int max = R_DOWN, posMax = 0;
 
-        for (int i = 0; i < array.length; i++) { //ноль не трогаем
-            //минимальный положительный
+        for (int i = 0; i < array.length; i++) {
+            //min positive
             if (array[i] > 0 && min > array[i]) {
                 min = array[i];
                 posMin = i;
             }
-            //максимальный отрицательный
+            //max negative
             else if (array[i] < 0 && max < array[i]) {
                 max = array[i];
                 posMax = i;
@@ -103,7 +105,7 @@ public class Task1 {
             }
         }
 
-        System.out.println("Result:");
+        System.out.println("Result array:");
         return array;
     }
 
@@ -116,8 +118,51 @@ public class Task1 {
             }
         }
 
-        System.out.println("result:");
+        System.out.println("result array:");
         return array;
+    }
+
+    void point5(int[] array) {
+        int sum = 0, min = R_UP;
+        for (int i = 0; i < array.length; i++) {
+            sum += array[i];
+            if (min > array[i]) {
+                min = array[i];
+            }
+        }
+
+        int average = sum / array.length, result = Math.abs(average - min);
+
+        System.out.println("Difference of average (" + average + ") and min element (" + min + ") is " + result);
+    }
+
+    void point6(int[] array) {
+        // берет элемент, проверяет есть ли такие же дальше,
+        // попутно заменяя одинаковый элемент на маркер, чтобы не было повторений на выходе,
+        // подсчитывая количество таких элементов
+        // и запоминая, был ли элемент на нечетной позиции
+        // (маркер - число, не входящее в диапазон доступных значений)
+        System.out.print("The numbers are ");
+        for (int i = 0; i < array.length; i++) {
+            int cnt = 0;
+            boolean wasEven = false;
+            if (array[i] != R_UP + 1) {
+                for (int j = i + 1; j < array.length; j++) {
+                    if (array[j] == array[i]) {
+                        cnt++;
+                        array[j] = R_UP + 1;
+                        if (j % 2 == 1) {
+                            wasEven = true;
+                        }
+                    }
+                }
+                if (cnt > 0 && (wasEven || i % 2 == 1)) {
+                    System.out.print(array[i] + " ");
+                }
+                array[i] = R_UP + 1;
+            }
+//            printArray(array);
+        }
     }
 
     public void printArray(int[] array) {
