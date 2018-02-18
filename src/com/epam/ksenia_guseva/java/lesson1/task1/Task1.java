@@ -161,7 +161,6 @@ public class Task1 {
                 }
                 array[i] = R_UP + 1;
             }
-//            printArray(array);
         }
     }
 
