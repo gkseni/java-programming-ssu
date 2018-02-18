@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 
 public class Task1 {
-    int R_UP = 10, R_DOWN = -10, LENGTH_ARRAY = 20;
+    static final int R_UP = 10, R_DOWN = -10, LENGTH_ARRAY = 20;
     Scanner in = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -19,7 +19,6 @@ public class Task1 {
 
     public void startTask1() {
         Random r = new Random();
-
         int[] array = new int[LENGTH_ARRAY];
         for (int i = 0; i < array.length; i++) {
             array[i] = r.nextInt(R_UP - R_DOWN) - R_UP;
