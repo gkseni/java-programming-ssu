@@ -48,6 +48,7 @@ public class Task1 {
                 printArray(point3(array));
                 break;
             case 4:
+                printArray(point4(array));
                 break;
             case 5:
                 break;
@@ -95,14 +96,27 @@ public class Task1 {
         System.out.println(" = " + sum);
     }
 
-    int[] point3(int[] array){
-        for (int i = 0; i < array.length; i++){
-            if (array[i] < 0){
+    int[] point3(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < 0) {
                 array[i] = 0;
             }
         }
 
         System.out.println("Result:");
+        return array;
+    }
+
+    int[] point4(int[] array) {
+        System.out.print("Change number ");
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] < 0 && array[i - 1] > 0) {
+                System.out.print(array[i - 1] + " on pos " + (i - 1) + ", ");
+                array[i - 1] *= 3;
+            }
+        }
+
+        System.out.println("result:");
         return array;
     }
 
