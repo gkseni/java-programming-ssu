@@ -45,6 +45,7 @@ public class Task1 {
                 point2(array);
                 break;
             case 3:
+                printArray(point3(array));
                 break;
             case 4:
                 break;
@@ -92,6 +93,17 @@ public class Task1 {
             sum += array[i];
         }
         System.out.println(" = " + sum);
+    }
+
+    int[] point3(int[] array){
+        for (int i = 0; i < array.length; i++){
+            if (array[i] < 0){
+                array[i] = 0;
+            }
+        }
+
+        System.out.println("Result:");
+        return array;
     }
 
     public void printArray(int[] array) {
