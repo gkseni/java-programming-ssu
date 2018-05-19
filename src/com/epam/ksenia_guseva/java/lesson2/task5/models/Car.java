@@ -1,7 +1,6 @@
 package com.epam.ksenia_guseva.java.lesson2.task5.models;
 
 public class Car {
-
     private String name;
     private String type;
     private String color;
@@ -48,7 +47,7 @@ public class Car {
         this.fuelConsumption = fuelConsumption;
     }
 
-    public Double getCost() {
+    public double getCost() {
         return cost;
     }
 
