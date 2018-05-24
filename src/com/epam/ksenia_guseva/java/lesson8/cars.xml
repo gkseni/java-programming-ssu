@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cars>
+    <car>
+        <name>Skoda</name>
+        <type>Sedan</type>
+        <color>Red</color>
+        <fuelConsumption>12</fuelConsumption>
+        <cost>400000</cost>
+    </car>
+    <car>
+        <name>Skoda</name>
+        <type>Sedan</type>
+        <color>Red</color>
+        <fuelConsumption>12</fuelConsumption>
+        <cost>400000</cost>
+    </car>
+    <car>
+        <name>Skoda</name>
+        <type>Sedan</type>
+        <color>Red</color>
+        <fuelConsumption>12</fuelConsumption>
+        <cost>400000</cost>
+    </car>
+</cars>
