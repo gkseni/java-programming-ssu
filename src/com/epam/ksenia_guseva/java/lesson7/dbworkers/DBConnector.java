@@ -1,8 +1,13 @@
 package com.epam.ksenia_guseva.java.lesson7.dbworkers;
 
+import com.epam.ksenia_guseva.java.lesson7.models.Employee;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DBConnector implements DBConnection {
 
@@ -40,4 +45,6 @@ public class DBConnector implements DBConnection {
     public Connection getConnection() {
         return connection;
     }
+
+
 }

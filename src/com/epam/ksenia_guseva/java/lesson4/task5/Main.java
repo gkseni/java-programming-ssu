@@ -1,6 +1,5 @@
 package com.epam.ksenia_guseva.java.lesson4.task5;
 
-import com.epam.ksenia_guseva.java.lesson4.task5.exceptions.WrongCostException;
 import com.epam.ksenia_guseva.java.lesson4.task5.models.*;
 
 public class Main {
